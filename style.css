@@ -56,6 +56,7 @@ header > i{
     display:flex;
     flex-direction:column-reverse;
     align-items: center;
+    cursor: pointer;
 }
 .tela{
     position: absolute;
@@ -122,12 +123,14 @@ header > i{
     display:flex;
     flex-direction:column-reverse;
     align-items: center;
+    cursor: pointer;
 }
 .corpoCamera{
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.9s;
     background: #363636;
     width: 15.5em;
     height: 9.5em;
@@ -146,9 +149,10 @@ header > i{
     justify-content: center;
     align-items: center;
 }
-.botaoCamera i{
+.botaoCameraCirculo{
     color: #00D2F0;
-    font-size:1.3em;
+    font-size:1.2em !important;
+    transition: all 0.5s;
 }
 
 .linhaBrancaCamera{
@@ -212,4 +216,22 @@ header > i{
 
 .invisivel{
     display: none;
+}
+
+
+@media(min-width: 1900px){
+    .grid{
+        max-width: 50%;
+        height: 600px;
+    }
+    header {
+        padding: 2.5em 5em 2.5em 5em;
+        margin-bottom: 5em;
+    }
+    header > i {
+        font-size: 10em !important;
+    }
+    header p {
+        font-size: 1.8em;
+    }
 }

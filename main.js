@@ -9,6 +9,23 @@ $(function() {
       $('.tela').css('transform', '');
 
     });
+
+    $('.cardCamera').hover(function() {
+      $('.botaoCameraCirculo').css('color', 'tomato');
+      if(innerWidth >1900){
+        $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
+      }else{
+      $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.07)');
+      }
+    
+    }, function() {
+      // on mouseout, reset the background colour
+      $('.botaoCameraCirculo').css('color', '');
+      $('.corpoCamera').css('transform', '');
+
+    });
+
+    
 });
 
 
