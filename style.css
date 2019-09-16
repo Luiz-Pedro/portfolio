@@ -1,38 +1,68 @@
+
 body, ul, li, p{
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: Arial;
+    font-family: 'Lexend Deca', sans-serif;
     font-size:1.0rem;
 }
+
 body{
     background:#00D2F0;
 }
+
+/* boneco perfil */
+header{
+    background-color: #1d1e20;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1.5em 5em 1.5em 5em;
+    align-items: center;
+    color:white;
+    margin-bottom: 3em;
+    position: relative;
+}
+header p{
+    font-size: 1.4em;
+}
+
+header > i{
+    font-size: 8em !important;
+    position: absolute;
+    top: 0.1em;
+    z-index: 20;
+}
+/* final boneco perfil */
+
 .grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap:2em;
+    grid-gap:6em;
     max-width: 60%;
-    margin: 3em auto;
-    
+    height: 400px;
+    margin: 0 auto;
 }
 
 /* inicio card desenvolvedor */
 .cardDev{
     width: auto;
-    height:30em;
     background: #00D2F0;
-    position: relative;
     background-image: url("img/background.jpg"); 
     background-size: cover;
+    position: relative;
     box-shadow: rgba(0,0,0,0.14902) 0 6px 14px 8px, rgba(0,0,0,0.09804) 0 2px 25px 1;
     transition: all 0.5s;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items: center;
 }
 .tela{
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.9s;
     background: #363636;
     width: 15.5em;
     height: 9.5em;
@@ -53,6 +83,7 @@ body{
     position: inherit;
     right: 1em;
     top:35%;
+    transition: all 0.5s;
 }
 .circulos i{
     margin-left: 0.4em;
@@ -69,13 +100,12 @@ body{
 }
 
 .cardDev p{
-    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 26px;
     font-weight: 700;
     color: white;
     position: absolute;
-    bottom: 2em;
-    left: 1em;
+    top:75%;
+    transition: all 1s;
 }
 /* final card desenvolvedor */
 
@@ -83,13 +113,15 @@ body{
 /* incio card camera */
 .cardCamera{
     width: auto;
-    height:30em;
     background: #00D2F0;
-    position: relative;
     background-image: url("img/background.jpg"); 
     background-size: cover;
+    position: relative;
     box-shadow: rgba(0,0,0,0.14902) 0 6px 14px 8px, rgba(0,0,0,0.09804) 0 2px 25px 1;
     transition: all 0.5s;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items: center;
 }
 .corpoCamera{
     position: absolute;
@@ -137,29 +169,47 @@ body{
     font-size: 4.5em;
 }
 .cardCamera p{
-    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    
     font-size: 26px;
     font-weight: 700;
     color: white;
     position: absolute;
-    bottom: 2em;
-    left: 1em;
+    top:75%;
 }
 /* final card camera */
 
 
+
 /* animacoes */
-
-
-
 .cardDev:hover{
     box-shadow: rgba(0,0,0,0.14902) 0 6px 14px 8px, rgba(0,0,0,0.09804) 0 2px 25px 0;
     transform: scale(1.1);
-    
     transform-origin: center;
 }
+
 .cardCamera:hover{
     transition: 0.5s;
     box-shadow: rgba(0,0,0,0.14902) 0 6px 14px 8px, rgba(0,0,0,0.09804) 0 2px 25px 0;
     transform: scale(1.1);
+}
+
+
+/* div front end */
+#frontEnd{
+    
+    margin-top: 8em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#fotografia{
+    margin-top: 8em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.invisivel{
+    display: none;
 }
