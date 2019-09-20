@@ -1,17 +1,25 @@
+
+// animacao em hover
 $(function() {
     $('.cardDev').hover(function() {
       $('.circulos').css('color', 'tomato');
+      $('.cardDev p').css('font-size', '2em');
+      if(innerWidth >1900){
+        $('.tela').css('transform', 'translate(-50%, -50%) scale(1.2)');
+      }else{
       $('.tela').css('transform', 'translate(-50%, -50%) scale(1.07)');
+      }
     
     }, function() {
       // on mouseout, reset the background colour
       $('.circulos').css('color', '');
       $('.tela').css('transform', '');
-
+      $('.cardDev p').css('font-size', '');
     });
 
     $('.cardCamera').hover(function() {
       $('.botaoCameraCirculo').css('color', 'tomato');
+      $('.cardCamera p').css('font-size', '2em');
       if(innerWidth >1900){
         $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }else{
@@ -22,7 +30,7 @@ $(function() {
       // on mouseout, reset the background colour
       $('.botaoCameraCirculo').css('color', '');
       $('.corpoCamera').css('transform', '');
-
+      $('.cardCamera p').css('font-size', '');
     });
 
     
