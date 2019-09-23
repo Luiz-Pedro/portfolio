@@ -2,8 +2,9 @@
 // animacao em hover
 $(function() {
     $('.cardDev').hover(function() {
-      $('.circulos').css('color', 'tomato');
+      $('.circulos').css('color', '#2E4E5C');
       $('.cardDev p').css('font-size', '2em');
+      $('.olhos i').css('transform', 'translate(-5px, 2px)');
       if(innerWidth >1900){
         $('.tela').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }else{
@@ -15,11 +16,13 @@ $(function() {
       $('.circulos').css('color', '');
       $('.tela').css('transform', '');
       $('.cardDev p').css('font-size', '');
+      $('.olhos i').css('transform', '');
     });
 
     $('.cardCamera').hover(function() {
-      $('.botaoCameraCirculo').css('color', 'tomato');
+      $('.botaoCameraCirculo').css('color', '#2E4E5C');
       $('.cardCamera p').css('font-size', '2em');
+      $('.olhos i').css('transform', 'translate(4px, 2px)');
       if(innerWidth >1900){
         $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }else{
@@ -31,6 +34,7 @@ $(function() {
       $('.botaoCameraCirculo').css('color', '');
       $('.corpoCamera').css('transform', '');
       $('.cardCamera p').css('font-size', '');
+      $('.olhos i').css('transform', '');
     });
 
     
@@ -109,3 +113,34 @@ function abrirFotografia(){
     });
 }
 
+
+  var gridImagens = document.querySelector(".gridImagens");
+  var divPai;
+  var imagem;
+  var divLegenda;
+  var numeroLegenda;
+
+  let quantidadeDeImagens = 15;
+  
+  for(var i = 1; i <= quantidadeDeImagens; i++){
+    divPai = document.createElement("div");
+    divPai.classList.add("conteudoDeCadaGrid");
+    divPai.classList.add("scrolleffect");
+
+    imagem= document.createElement("img");
+    imagem.src = `img/fotos/${i}.jpg`;
+    imagem.classList.add("imagemGrid");
+
+    divLegenda = document.createElement("div");
+    divLegenda.classList.add("legenda");
+
+    numeroLegenda = document.createElement("p");
+    numeroLegenda.classList.add("imagemNumero");
+    numeroLegenda.innerHTML = i.toString().length == 1 ? `0${i}` : `${i}`;
+    
+
+    divPai.appendChild(imagem);
+    divPai.appendChild(divLegenda);
+    divLegenda.appendChild(numeroLegenda);
+    gridImagens.appendChild(divPai);
+  }

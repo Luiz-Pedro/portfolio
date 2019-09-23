@@ -6,7 +6,9 @@ body, ul, li, p{
     font-family: 'Lexend Deca', sans-serif;
     font-size:1.0rem;
 }
-
+a{
+    text-decoration: none;
+}
 body{
     background:#00D2F0;
 }
@@ -42,13 +44,30 @@ header{
 }
 header p{
     font-size: 1.4em;
-}
-
-header > i{
-    font-size: 8em !important;
+}    
+.avatar{
     position: absolute;
     top: 0.1em;
-    z-index: 20;
+    z-index: 2;
+}
+.avatar img{
+    height: 160px;
+    width: 160px;
+}
+.olhos {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 3;
+    position: absolute;
+    top: 36%;
+    left: 61px;
+}
+.olhos i{
+    color: #1d1e20;
+    font-size: 0.8em;
+    margin-right: 17px;
+    transition: all 0.5s;
+    transform: translate(0px, 0px);
 }
 /* final boneco perfil */
 
@@ -286,22 +305,22 @@ header > i{
 }
 
 .vejaMaisNoInstagram{
-    border: solid 2px red;
     width: 50%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     color: #1d1e20;
     margin-bottom: 2em;
 }
-.vejaMaisNoInstagram i{
-    font-size: 6em;
-    color:tomato;
+.vejaMaisNoInstagram p{
+    font-size: 2em;
 }
 .perfilInstagram{
-    color:tomato;
+    color: #00D2F0;
 }
-
+.perfilInstagram:hover{
+    opacity: 0.6;
+}
 
 .invisivel{
     display: none;
