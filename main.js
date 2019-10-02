@@ -1,14 +1,15 @@
 
 // animacao em hover
 $(function() {
-    $('.cardDev').hover(function() {
+    $('.tela').hover(function() {
       $('.circulos').css('color', '#2E4E5C');
-      $('.cardDev p').css('font-size', '2em');
+      $('.cardDev p').css('font-size', '1.7em');
+      $('.cardDev p').css('transform', 'translate(0px, 1em)');
       $('.olhos i').css('transform', 'translate(-5px, 2px)');
       if(innerWidth >1900){
-        $('.tela').css('transform', 'translate(-50%, -50%) scale(1.2)');
+        $('.tela').css('transform', 'translate(-50%, -50%) scale(1.5)');
       }else{
-      $('.tela').css('transform', 'translate(-50%, -50%) scale(1.07)');
+      $('.tela').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }
     
     }, function() {
@@ -16,17 +17,19 @@ $(function() {
       $('.circulos').css('color', '');
       $('.tela').css('transform', '');
       $('.cardDev p').css('font-size', '');
+      $('.cardDev p').css('transform', '');
       $('.olhos i').css('transform', '');
     });
 
-    $('.cardCamera').hover(function() {
+    $('.corpoCamera').hover(function() {
       $('.botaoCameraCirculo').css('color', '#2E4E5C');
-      $('.cardCamera p').css('font-size', '2em');
+      $('.cardCamera p').css('font-size', '1.7em');
+      $('.cardCamera p').css('transform', 'translate(0px, 1em)');
       $('.olhos i').css('transform', 'translate(4px, 2px)');
       if(innerWidth >1900){
-        $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
+        $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.5)');
       }else{
-      $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.07)');
+      $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }
     
     }, function() {
@@ -34,6 +37,7 @@ $(function() {
       $('.botaoCameraCirculo').css('color', '');
       $('.corpoCamera').css('transform', '');
       $('.cardCamera p').css('font-size', '');
+      $('.cardCamera p').css('transform', '');
       $('.olhos i').css('transform', '');
     });
 
