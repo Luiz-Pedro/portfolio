@@ -356,24 +356,30 @@ header p{
 }
 .divProjetosPessoais h1{
     margin-top: 1em !important;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 .gridProjetosPessoais{
-    display:grid;
+    /* display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5em;
     max-width: 80%;
     height: auto;
+    margin: 0 auto; */
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(85% + 2em);
     margin: 0 auto;
 }
 
 .projetoPessoal{
     border-radius: 1em;
     height: auto;
+    flex: 1 1 25%;
+    margin: 1em;
 }
 .projetoPessoal img{
-    height: 95px;
-    width: 264px;
+    height: 200px;
+    width: 327px;
     border-radius: 1em;
     cursor: pointer;
 }
@@ -384,15 +390,32 @@ header p{
 }
 .footerFrontEnd{
     background: #1d1e20;
-    
     width: 100%;
-    margin-top:5em;
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2em 3em 2em 3em;
 }
-.footerFrontEnd i{
-    color:white;
-    font-size:3em;
+.redes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.redes i{
+    color: aliceblue;
+    font-size: 2em;
+    margin-right: 1em;
 }
 
+.feitoPorMim p{
+    font-size: 0.8em;
+    color:aliceblue;
+}
+.feitoPorMim i{
+    color:#00D2F0;
+}
 
 
 
@@ -482,15 +505,26 @@ header p{
 
 /* para telas grandes */
 @media(min-width: 1900px){
+
+    .apresentacao {
+        margin-top: 6em;
+    }
+    .apresentacaoTitulo {
+        font-size: 3em;
+    }
     .grid{
         max-width: 50%;
         height: 600px;
     }
     .cardDev p{
-        font-size: 2.5em;
+        font-size: 1.5em;
+        position: absolute;
+        top: 70%;
     }
     .cardCamera p{
-        font-size: 2.5em;
+        font-size: 1.5em;
+        position: absolute;
+        top: 70%;
     }
     header {
         padding: 2.5em 5em 2.5em 5em;
