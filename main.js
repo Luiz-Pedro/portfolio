@@ -6,8 +6,8 @@ $(function() {
       $('.cardDev p').css('font-size', '1.7em');
       $('.cardDev p').css('transform', 'translate(0px, 1em)');
       $('.olhos i').css('transform', 'translate(-5px, 2px)');
-      if(innerWidth >1900){
-        $('.tela').css('transform', 'translate(-50%, -50%) scale(1.5)');
+      if(innerWidth > 1900){
+        $('.tela').css('transform', 'translate(-50%, -50%) scale(1.25)');
       }else{
       $('.tela').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }
@@ -27,7 +27,7 @@ $(function() {
       $('.cardCamera p').css('transform', 'translate(0px, 1em)');
       $('.olhos i').css('transform', 'translate(4px, 2px)');
       if(innerWidth >1900){
-        $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.5)');
+        $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.25)');
       }else{
       $('.corpoCamera').css('transform', 'translate(-50%, -50%) scale(1.2)');
       }
@@ -44,77 +44,92 @@ $(function() {
     
 });
 
+function scrollEffect(nomeClasseScroll){
+  (function($) {
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *     the user visible viewport of a web browser.
+     *     only accounts for vertical position, not horizontal.
+     */
+  
+    $.fn.visible = function(partial) {
+      
+        var $t            = $(this),
+            $w            = $(window),
+            viewTop       = $w.scrollTop(),
+            viewBottom    = viewTop + $w.height(),
+            _top          = $t.offset().top,
+            _bottom       = _top + $t.height(),
+            compareTop    = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
+      
+      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+  
+    };
+      
+  })(jQuery);
+  
+  var win = $(window);
+  
+  var allMods = $(`.${nomeClasseScroll}`);
+  
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("already-visible"); 
+    } 
+  });
+  
+  win.scroll(function(event) {
+    
+    allMods.each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("come-in"); 
+      } 
+    });
+    
+  });
+}
+
 
 function abrirFrontend(){
 
   $("#fotografia").hide();
+  var divProjetos = document.querySelectorAll(".gridProjetosPessoais div");
+  divProjetos.forEach(element => {
+    element.classList.remove("come-in");
+  });
   $("#frontEnd").fadeIn();
   $("#frontEnd").css("display", "flex");
   $('html,body').animate({
     scrollTop: $("#frontEnd").offset().top},
     'slow');
+    var nomeClasseScroll = "scrolleffectProjetos";
+    scrollEffect(nomeClasseScroll);
+
 }
 
 function abrirFotografia(){
 
   $("#frontEnd").hide();
+  var divImagens = document.querySelectorAll(".gridImagens div");
+  divImagens.forEach(element => {
+    element.classList.remove("come-in");
+  });
   $("#fotografia").fadeIn();
   $("#fotografia").css("display", "flex");
   $('html,body').animate({
     scrollTop: $("#fotografia").offset().top},
     'slow');
-  
-    (function($) {
-
-      /**
-       * Copyright 2012, Digital Fusion
-       * Licensed under the MIT license.
-       * http://teamdf.com/jquery-plugins/license/
-       *
-       * @author Sam Sehnert
-       * @desc A small plugin that checks whether elements are within
-       *     the user visible viewport of a web browser.
-       *     only accounts for vertical position, not horizontal.
-       */
-    
-      $.fn.visible = function(partial) {
-        
-          var $t            = $(this),
-              $w            = $(window),
-              viewTop       = $w.scrollTop(),
-              viewBottom    = viewTop + $w.height(),
-              _top          = $t.offset().top,
-              _bottom       = _top + $t.height(),
-              compareTop    = partial === true ? _bottom : _top,
-              compareBottom = partial === true ? _top : _bottom;
-        
-        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-    
-      };
-        
-    })(jQuery);
-    
-    var win = $(window);
-    
-    var allMods = $(".scrolleffect");
-    
-    allMods.each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("already-visible"); 
-      } 
-    });
-    
-    win.scroll(function(event) {
-      
-      allMods.each(function(i, el) {
-        var el = $(el);
-        if (el.visible(true)) {
-          el.addClass("come-in"); 
-        } 
-      });
-      
-    });
+    var nomeClasseScroll = "scrolleffectImagens";
+    scrollEffect(nomeClasseScroll);
 }
 
 
@@ -129,7 +144,7 @@ function abrirFotografia(){
   for(var i = 1; i <= quantidadeDeImagens; i++){
     divPai = document.createElement("div");
     divPai.classList.add("conteudoDeCadaGrid");
-    divPai.classList.add("scrolleffect");
+    divPai.classList.add("scrolleffectImagens");
 
     imagem= document.createElement("img");
     imagem.src = `img/fotos/${i}.jpg`;
