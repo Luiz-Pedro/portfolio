@@ -268,6 +268,7 @@ header p{
 #frontEnd h1{
     font-size: 3em;
     margin-top:1.5em;
+    text-align: center;
 }
 .divInformacoes{
     margin-top:1.5em;
@@ -578,7 +579,7 @@ header p{
 }
 
 /* para mobile */
-@media(max-width: 601px){
+@media(max-width: 801px){
     .apresentacao {
         max-width: 80%;
         margin-top: 7em;
@@ -620,5 +621,16 @@ header p{
     }
     .perspective-line {
         height: 44px;
+    }
+}
+
+@media(max-width: 1175px){
+    .divInformacoes {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 0em;
+        margin-bottom: 0.5em;
+    }
+    .informacoes {
+        order: -1;
     }
 }
