@@ -273,7 +273,7 @@ header p{
 .divInformacoes{
     margin-top:1.5em;
     margin-bottom:3.5em;
-    width: 60%;
+    width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap:3em;
@@ -289,68 +289,18 @@ header p{
     font-size: 1.5em;
     
 }
-.informacoesLinguagens {
-    /* border: solid 1px tomato; */
+
+.divLinguagens{
     width: auto;
-    height: 400px;
+    height:400px;
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
-    font-size: 2em;
+    align-items: center;
+    justify-content: center;
 }
-
-.perspective-text {
-    font-size: 58px;
-    font-weight: 900;
-    letter-spacing: -2px;
-    text-transform: uppercase;
-    /* margin-right: 3em; */
-    margin-left: -2em;
-    color: #00D2F0;
+.divLinguagens img{
+    width: 100%;
+    height:auto;
 }
-.perspective-line {
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-    /* width: auto; */
-}
-.perspective-line p {
-    margin: 0;
-    height: 50px;
-    line-height: 50px;
-    /* width: 50%; */
-    transition: all 0.5s ease-in-out;
-  }  
-  .perspective-line:nth-child(odd) {
-    transform: skew(60deg, -30deg) scaleY(0.667);
-  }
-  .perspective-line:nth-child(even) {
-    transform: skew(0deg, -30deg) scaleY(1.333);
-  }
-  .perspective-line:hover p{
-    transform: translate(0, -50px);
-  }
-  .perspective-line:nth-child(1) {
-    left: 29px;
-  }
-  .perspective-line:nth-child(2) {
-    left: 58px;
-  }
-  .perspective-line:nth-child(3) {
-    left: 87px;
-  }
-  .perspective-line:nth-child(4) {
-    left: 116px;
-  }
-  .perspective-line:nth-child(5) {
-    left: 145px;
-  }
-  p {
-    transition: all 0.5s ease-in-out;
-  }
-
 
 .divProjetosPessoais{
     width: 100%;
@@ -541,10 +491,17 @@ header p{
         font-size: 3.5em;
         margin-top:2.5em;
     }
+    .divLinguagens img {
+        width: 60%;
+        height: auto;
+    }
     .informacoes {
-        align-items: flex-end;
         padding: 0em 4em;
         line-height: 1.7;
+    }
+    .divInformacoes {
+        margin-top: 2.5em;
+        margin-bottom: 0em;
     }
 
     header {
@@ -579,7 +536,7 @@ header p{
 }
 
 /* para mobile */
-@media(max-width: 801px){
+@media(max-width: 701px){
     .apresentacao {
         max-width: 80%;
         margin-top: 7em;
@@ -608,29 +565,14 @@ header p{
         grid-template-columns: repeat(1, 1fr);
         margin-top: 0em;
         margin-bottom: 0.5em;
+        grid-gap: 1em;
     }
     .informacoes {
         order: -1;
     }
+    .divLinguagens {
+        height: 250px;
+    }
 
-    .informacoesLinguagens {
-        margin-top: -1em;
-    }
-    .perspective-text {
-        font-size: 47px;
-    }
-    .perspective-line {
-        height: 44px;
-    }
 }
 
-@media(max-width: 1175px){
-    .divInformacoes {
-        grid-template-columns: repeat(1, 1fr);
-        margin-top: 0em;
-        margin-bottom: 0.5em;
-    }
-    .informacoes {
-        order: -1;
-    }
-}
