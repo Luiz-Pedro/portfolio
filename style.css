@@ -11,6 +11,9 @@ a{
 body{
     background: #00D2F0;
 }
+*:focus {
+    outline: none;
+}
 .come-in {
     transform: translateY(150px);
     animation: come-in 0.8s ease forwards;
@@ -381,17 +384,8 @@ header p{
 
 /* imagens fotografia */
 
-.headerFotografia{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2em;
-}
-.headerFotografia p{
-    font-size: 3em;
-    padding-top: 1em;
-}
+
+
 
 .gridImagens{
     display:grid;
@@ -400,6 +394,7 @@ header p{
     margin: 0 auto;
     grid-gap: 1em;
     margin-bottom: 2em;
+    margin-top: 4em;
     height: auto;
 }
 .conteudoDeCadaGrid{
@@ -534,6 +529,12 @@ header p{
     }
 
 }
+@media(max-width: 901px){
+    .gridImagens {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 91%;
+    }
+}
 
 /* para mobile */
 @media(max-width: 701px){
@@ -548,9 +549,27 @@ header p{
         height: 37em;
         margin-bottom: 4em;
     }
+    .filtroImagens{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2em;
+        margin-top: 2em;
+        width: 90%;
+    }
+    .filtroImagens button{
+        background: transparent;
+        border:none;
+    }
+    .filtroImagens i{
+        font-size: 2em;
+        color:#1d1e20;
+        cursor: pointer;
+    }
     .gridImagens {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         max-width: 91%;
+        margin-top: 0em;
     }
     .vejaMaisNoInstagram {
         width: 85%;
@@ -575,4 +594,3 @@ header p{
     }
 
 }
-

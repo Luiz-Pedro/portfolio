@@ -163,3 +163,22 @@ function abrirFotografia(){
     divLegenda.appendChild(numeroLegenda);
     gridImagens.appendChild(divPai);
   }
+
+function mudarColuna(quantasColunas){
+
+  let gridDeImagens = document.querySelector(".gridImagens");
+  let propriaImagem = document.querySelectorAll(".imagemGrid");
+  if(quantasColunas == "1coluna"){
+    gridDeImagens.style.gridTemplateColumns = "repeat(1, 1fr)";
+    propriaImagem.forEach(img => {
+      img.style.height = "360px";
+    });
+  }
+  else if(quantasColunas == "2colunas"){
+    gridDeImagens.style.gridTemplateColumns = "repeat(2, 1fr)";
+    propriaImagem.forEach(img => {
+      img.style.height = "250px";
+    });
+    
+  }
+}
